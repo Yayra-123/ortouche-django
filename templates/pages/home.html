@@ -1,0 +1,104 @@
+{% extends "base2.html" %}
+{% load static %}
+{% block title %}home{% endblock title %}
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{% static "css/orTouch.css" %}">
+{% endblock stylesheet %}
+{% block body %}
+<div class="conteneurp">
+    <main>
+        <div class="theme">
+            <h1>Votre vision notre creativite</h1>
+            <h5>Du concep a la creation,l'art de la precision grafique</h5>
+        </div>
+        <section class="cadres">
+            <a href="#section2">
+                <div class="container">
+                    <div class="vertical-bar"></div>
+                    <div class="content">
+                        <p>Decouvrez nous <br> <span>or-Touche</span></p>
+                    </div>
+                    <img class="img1" src="{% static "css/img/Groupe8.svg" %} " alt="">
+                </div>
+            </a>
+            <a href="{% url 'ortouche_logo:logo' %}">
+                <div class="container2">
+                    <div class="vertical-bar"></div>
+                    <div class="content">
+                        <p>Logo</p>
+                    </div>
+                    <img class="img2" src="{% static "css/img/Groupe4.svg" %} " alt="">
+                </div>
+            </a>
+            <a href="/">
+                <div class="container3">
+                    <div class="vertical-bar"></div>
+                    <div class="content">
+                        <p>Packaging <br> <span>produit</span></p>
+                    </div>
+                    <img class="img3" src="{% static "css/img/Group7.png" %} " alt="">
+                </div>
+            </a>
+            <a href="/">
+                <div class="container4">
+                    <div class="vertical-bar"></div>
+                    <div class="content">
+                        <p>Affiche</p>
+                    </div>
+                    <div class="livres">
+                        <div class="box box1"></div>
+                        <div class="box box2"></div>
+                        <div class="box box3">
+                            
+                            <img src="{% static "css/img/trace.svg" %} " alt="">
+                        </div>
+                    </div>
+                </div>
+                
+            </a>
+        </section>
+        <section class="section2" id="section2">
+            <h3>la garantie de devenir leader</h3>
+            <p>Vos besoins evoluent, tout comme nos solutions.c'est pourquoi nous nous mettonsa jour et enrichissons regulierement nos offres et pour repondre au mieux a vos attentes</p>
+            <h1>Offres</h1>
+            <div class="barre_horizontal"></div>
+            <div class="services" >
+                <div class="gauche">
+                    <p>Etude du marche </p>
+                    <p>Conception de magazines</p>
+                    <p>Conceptions de produit et packaging</p>
+                    <p>Creation de sites web</p>
+                </div>
+
+                <div class="droite">
+                    <p>Marketing et campagne publicite </p>
+                    <p>Creation grphique d'entreprise( identite visuelle,flyer)</p>
+                    <p>Community management( gestion de reseaux sociaux)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section3" id="section3">
+            <div class="left">
+                <h3>chaque projet merite une touche unique</h3>
+                <p>Or touche est une entreprise de design graphique reconnu pour son expertise sur mesure en comunication visuelle.nous collaboront etroitement avec les starup,tout en accompagnant divers secteurs pour transformer leur visions en realite virtuelles percutantes</p>
+            </div>
+            <div class="right">
+            </div>
+        </section>
+        <section class="section4">
+            <div class="left1">
+            </div>
+            <div class="right1">
+                <h3>Rien n'est laisser au hasard</h3>
+                <p>Chaque projet est concu sur mesure pour garantir des resultats optimaux:notre approche repose sur des analyses rigoureuses et des strategies precises.nos valeurs fondamentales sont l'objectivite et la reactivite.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        {% include "partials/footer.html" %}
+    </footer>
+</div>
+{% endblock body %}
+
+ 

@@ -1,0 +1,19 @@
+/* Change la couleur de fond du header */
+#header {
+    background-color: #191919 !important; /* Couleur forcée */
+}
+
+/* Change la couleur du texte dans le header */
+#header .branding h1, 
+#header .branding h1 a {
+    color: white !important; /* Couleur forcée */
+}
+
+/* Change la couleur des liens dans le header */
+#header .nav a {
+    color: white !important;
+}
+
+#header .nav a:hover {
+    color: #FFD700 !important; /* Couleur forcée en hover */
+}

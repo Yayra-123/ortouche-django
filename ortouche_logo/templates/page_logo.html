@@ -1,0 +1,101 @@
+{% extends "base2.html" %}
+{% load static %}
+
+{% block title %}Logo{% endblock title %}
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{% static "css/ortouch-logo.css" %}">
+
+{% endblock stylesheet %}
+{% block body %}
+<div class="container">
+    <!-- Barre latérale -->
+    <aside class="sidebar">
+        <div id="hover-item" class="commentaire">
+            <p>Décrivez votre besoin...</p>
+            <div class="trai"></div>
+        </div>
+        
+        <div id="textarea-container" class="textarea-container"></div>
+        <div class="list">
+            <ul>
+                <li><a href="#">Logo</a></li>
+                <li><a href="#">Affiche</a></li>
+                <li><a href="#">Packaging / Produit</a></li>
+                <li><a href="#">Découvrez nous</a></li>
+                <li><a href="#">Contactez nous</a></li>
+            </ul>
+        </div>
+        <ul  class="ul2">
+            <li><a href="#">Formation</a></li>
+            <li><a href="#">Promotion</a></li>
+        </ul>
+    </aside>
+
+    <!-- Galerie de logos -->
+     <main class="gallery">
+        {% for logo in logos %}
+
+
+            <div class="logo-item">
+                <img src="{{logo.image.url}}" alt="{{logo.titre}}">
+                <p>{{logo.titre}}</p>
+            </div>
+
+        {% endfor %}
+
+    </main>    
+</div>
+<script>
+    // Sélectionne l'élément sur lequel on fait un hover et le conteneur pour la textarea
+const hoverItem = document.getElementById('hover-item');
+const textareaContainer = document.getElementById('textarea-container');
+
+// Fonction pour afficher la textarea lors du survol
+hoverItem.addEventListener('mouseover', function() {
+let textarea = document.querySelector('textarea');
+
+// Si la textarea n'existe pas déjà, on la crée
+if (!textarea) {
+    textarea = document.createElement('textarea');
+    textarea.setAttribute('placeholder', 'Écrivez quelque chose...');
+    textareaContainer.appendChild(textarea);
+}
+
+// Affiche la textarea
+textarea.style.display = 'block';
+});
+
+// Fonction pour cacher la textarea lorsque la souris quitte l'élément
+
+
+document.addEventListener('click', function (event) {
+if (textarea && !textarea.contains(event.target) && !hoverItem.contains(event.target)) {
+    textareaContainer.removeChild(textarea); // Supprime la textarea
+    textarea = null; // Réinitialise la variable
+}
+});
+
+</script>
+<footer>
+    <div class="barre_footer"></div>
+    <div class="telephone">
+        <div class="g">
+            <h3>Or touche</h3>
+            <ul>
+                <li><a href="/">Politique de travail</a></li>
+                <li><a href="/">adresse mail</a></li>
+                <li><a href="/">contact</a></li>
+            </ul>
+        </div>
+        <div class="d">
+            <h3>Resaux sociaux</h3>
+            <ul>
+                <li><a href="/">instagram</a></li>
+                <li><a href="/">tiktok</a></li>
+                <li><a href="/">whatsapp</a></li>
+            </ul>
+        </div>
+    </div>
+
+</footer>
+{% endblock body %}

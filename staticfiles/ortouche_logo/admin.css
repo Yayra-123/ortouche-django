@@ -1,0 +1,14 @@
+/* Change la couleur de fond du header */
+#header {
+    background-color: #191919; /* Vert ou la couleur de votre choix */
+}
+
+/* Change la couleur du texte dans le header */
+#header h1, #header a {
+    color: white; /* Texte en blanc */
+}
+
+/* Ajoute un style aux liens du header */
+#header a:hover {
+    text-decoration: underline;
+}
